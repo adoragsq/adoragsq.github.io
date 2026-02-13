@@ -7,6 +7,12 @@
 </head>
 <body>
 
+    <div class="background-blobs">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+    </div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -19,11 +25,24 @@
     <p>You can reach me at:</p>
 
     <ul>
-      <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
-      <li>LinkedIn: <a href="#">Your LinkedIn</a></li>
+      <li>Email: <a href="mailto:adoragsq@outlook.com">adoragsq@outlook.com</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/adora-goh">www.linkedin.com/in/adora-goh</a></li>
       <li>GitHub: <a href="https://github.com/adoragsq">github.com/adoragsq</a></li>
     </ul>
   </section>
+
+  <script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+</script>
+
 
 </body>
 </html>

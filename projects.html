@@ -7,6 +7,13 @@
 </head>
 <body>
 
+    <div class="background-blobs">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+    </div>
+
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -17,19 +24,33 @@
   <section class="content">
     <h1>Projects</h1>
 
-    <div class="project-card">
+    <div class="project-card glass hidden-left">
       <h2>Project Title</h2>
       <p>Short description of what you built, why you built it, and what tools you used.</p>
       <a href="#" class="btn">View Project</a>
     </div>
 
-    <div class="project-card">
+    <div class="project-card glass hidden-left">
       <h2>Another Project</h2>
       <p>Another short description. You can add as many as you want.</p>
       <a href="#" class="btn">View Project</a>
     </div>
 
   </section>
+
+    <script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+        });
+    });
+
+    document.querySelectorAll('.hidden, .hidden-left, .hidden-right')
+        .forEach(el => observer.observe(el));
+    </script>
+
 
 </body>
 </html>

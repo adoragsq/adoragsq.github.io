@@ -7,6 +7,13 @@
 </head>
 <body>
 
+    <div class="background-blobs">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+    </div>
+    
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -25,7 +32,126 @@
       <li>🧼 I like organising things</li>
       <li>🍵 Favourite drink: hojicha latte</li>
     </ul>
-  </section>
+    </section>
+
+    <section class="content">
+    <h2>My Journey</h2>
+
+    <div class="journey-wrapper">
+
+        <!-- CENTER LINE -->
+        <div class="journey-line"></div>
+
+        <!-- LEFT COLUMN — EXPERIENCE -->
+        <div class="journey-column left">
+
+        <!-- En Motion -->
+        <div class="timeline-item hidden-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+            <h3>2023 - Present </h3>
+            <h3>En Motion Dance Studio</h3>
+            <h4>Administrative Staff (Part Time)</h4>
+            <p>Managed Instagram content, supported daily operations, handled student enquiries, and served as Ticketing‑in‑Charge for Bachata Corazon Festival 2024.</p>
+            </div>
+        </div>
+
+        <!-- Allianz Internship -->
+        <div class="timeline-item hidden-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+            <img src="assets/images/internship.jpg" alt="Allianz Internship" class="timeline-photo">
+            <h3>2024 - 2025</h3>
+            <h3>Allianz Insurance Singapore</h3>
+            <h4>Business Development Intern</h4>
+            <p>Supported Business Development Managers, coordinated with multiple departments, generated motor quotations daily, and improved reporting quality by compiling and validating claims data.</p>
+            </div>
+        </div>
+
+        <!-- Trehaus -->
+        <div class="timeline-item hidden-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+            <h3>2021 - 2022</h3>
+            <h3>Trehaus</h3>
+            <h4>Business Operations Intern</h4>
+            <p>Managed reception activities, uploaded over 100 invoices using Wave, assisted with event planning, and provided friendly service that consistently gained compliments.</p>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN — EDUCATION -->
+        <div class="journey-column right">
+
+        <!-- SIT -->
+        <div class="timeline-item hidden-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+            <h3>2025 - 2028</h3>
+            <h3>Singapore Institute of Technology</h3>
+            <h4>BSc (Hons) in Applied Computing (FinTech)</h4>
+            <p><b>Leadership Role:</b></p>
+            <p><b>Secretary of the Applied Computing Student Management Committee</b> coordinating administrative and financial records.</p>
+            </div>
+        </div>
+
+        <!-- NP -->
+        <div class="timeline-item hidden-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+            <h3>2022 - 2025</h3>
+            <h3>Ngee Ann Polytechnic</h3>
+            <h4>Diploma in Banking & Finance</h4>
+            <p>Diploma in Banking & Finance with minors in Data Analytics & AI and Japanese Language. Treasurer/Admin Head of Rock Climbing Club, achieving 150+ sign‑ups and improving financial record accuracy.</p>
+            </div>
+        </div>
+
+        <!-- PolyFintech100 Hackathon (under NP) -->
+        <div class="timeline-item hidden-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+            <h3>2023</h3>
+            <h3>PolyFintech100 API Hackathon</h3>
+            <h4>Category Champion (InsurTech)</h4>
+            <p>Developed a game-based InsurTech app promoting youth investment literacy and risk awareness, earning the Category Champion title.</p>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    </section>
+
+
+
+    <script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+        });
+    });
+
+    document.querySelectorAll('.hidden, .hidden-left, .hidden-right')
+        .forEach(el => observer.observe(el));
+    </script>
+
+    <script>
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    document.querySelector(".blob3d-1").style.transform =
+      `translateY(${scrollY * 0.05}px) scale(1.1)`;
+
+    document.querySelector(".blob3d-2").style.transform =
+      `translateY(${scrollY * -0.03}px) scale(1.15)`;
+
+    document.querySelector(".blob3d-3").style.transform =
+      `translateY(${scrollY * 0.04}px) scale(1.05)`;
+    });
+    </script>
 
 </body>
 </html>

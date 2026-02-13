@@ -7,6 +7,13 @@
 </head>
 <body>
 
+  <div class="background-blobs">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -14,10 +21,23 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <header class="hero">
+  <header class="hero hidden">
+    <img src="assets/images/profile.png" alt="Adora" class="profile-photo hidden">
     <h1>Hello, I'm Adora 👋</h1>
     <p>Applied Computing (FinTech) student at SIT, passionate about data, tools, and building useful things.</p>
   </header>
+
+  <script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
